@@ -14,6 +14,8 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+import { GoogleChartsModule } from 'angular-google-charts';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    GoogleChartsModule.forRoot()
   ],
   declarations: [
     DashboardComponent,

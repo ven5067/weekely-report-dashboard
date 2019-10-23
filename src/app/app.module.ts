@@ -9,10 +9,6 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
-
-import {
-  AgmCoreModule
-} from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 
@@ -24,13 +20,11 @@ import { GoogleChartsModule } from 'angular-google-charts';
     HttpModule,
     ComponentsModule,
     RouterModule,
-    AppRoutingModule,
-    GoogleChartsModule.forRoot()
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-
+    AdminLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

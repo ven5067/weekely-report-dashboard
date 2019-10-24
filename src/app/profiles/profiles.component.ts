@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from 'app/services/dashboard.service';
 
 @Component({
   selector: 'app-profiles',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilesComponent implements OnInit {
 
-  constructor() { }
+  org_chart: Array<any> = [];
+
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
+    this.org_chart = this.dashboardService.dashboardData.org_chart;
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartEvent, ChartErrorEvent, GoogleChartComponent } from 'angular-google-charts';
 import { Router } from '@angular/router';
+import { DashboardService } from 'app/services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,68 +19,18 @@ export class DashboardComponent implements OnInit {
     body?: {}
   }> = [];
 
-  public changingChart = {
-    title: 'Changing Chart',
-    type: 'BarChart',
-    data: [['Copper', 8.94], ['Silver', 10.49], ['Gold', 19.3], ['Platinum', 21.45]],
-    columnNames: ['Element', 'Density'],
-    options: {
-      animation: {
-        duration: 250,
-        easing: 'ease-in-out',
-        startup: true
-      }
-    }
-  };
+  public tasks: Array<any> = [];
+  public objectKeys = Object.keys;
 
   @ViewChild('chart', { static: true })
   public chart: GoogleChartComponent;
 
-  constructor(private router: Router) {
-    this.charts.push({
-      title: 'Pie Chart',
-      type: 'PieChart',
-      columnNames: ['Task', 'Pecentage by Week'],
-      data: [['Planned', 40], ['Actual', 60]],
-      roles: [],
-      body: {
-        title: 'Planning',
-        description: '<span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> has been completed.</p>'
-      }
-    });
-    this.charts.push({
-      title: 'Pie Chart',
-      type: 'PieChart',
-      columnNames: ['Task', 'Hours per Day'],
-      data: [['Planned', 40], ['Actual', 60]],
-      roles: [],
-      body: {
-        title: 'Knowledge Transfer',
-        description: '<span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> has been completed.</p>'
-      }
-    });
-    this.charts.push({
-      title: 'Pie Chart',
-      type: 'PieChart',
-      columnNames: ['Task', 'Pecentage by Week'],
-      data: [['Planned', 40], ['Actual', 60]],
-      roles: [],
-      body: {
-        title: 'Shadow Support',
-        description: '<span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> has been completed.</p>'
-      }
-    });
-    this.charts.push({
-      title: 'Pie Chart',
-      type: 'PieChart',
-      columnNames: ['Task', 'Pecentage by Week'],
-      data: [['Planned', 40], ['Actual', 60]],
-      roles: [],
-      body: {
-        title: 'Planning',
-        description: '<span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> has been completed.</p>'
-      }
-    });
+  constructor(
+    private router: Router,
+    private dashboardService: DashboardService
+  ) {
+    this.charts = this.dashboardService.dashboardData.dashboard.charts;
+    this.tasks = this.dashboardService.dashboardData.dashboard.tasks;
   }
 
   public onReady() {
@@ -106,17 +57,12 @@ export class DashboardComponent implements OnInit {
     console.log(this.chart);
   }
 
-  public changeChart() {
-    this.changingChart.data = [
-      ['Copper', Math.random() * 20.0],
-      ['Silver', Math.random() * 20.0],
-      ['Gold', Math.random() * 20.0],
-      ['Platinum', Math.random() * 20.0]
-    ];
-  }
-
   public navigateToTest() {
     this.router.navigateByUrl('/test');
+  }
+
+  public isArray(val) {
+    return Array.isArray(val);
   }
   
 }

@@ -10,136 +10,42 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <thead class=" text-danger text-center">
+                                <thead class="text-danger text-center">
                                     <th>
                                         ID
                                     </th>
-                                    <th>
-                                        Application Name
-                                    </th>
-                                    <th>
-                                        TMO Session/Wiki
-                                    </th>
-                                    <th>
-                                        PK Documentation
-                                    </th>
-                                    <th>
-                                        HCL Shadow Support
-                                    </th>
-                                    <th>
-                                        Reverse KT
-                                    </th>
+                                    <th *ngFor="let header of applications.headers">{{ header }}</th>
                                 </thead>
-                                <tbody class="text-center">
+                                <tbody class="text-center" *ngFor="let application of applications.data; let i = index;">
                                       <tr>
                                               <td>
-                                                  1
+                                                  {{ i }}
                                               </td>
                                               <td>
-                                                  DICE
+                                                  {{ application.name }}
                                               </td>
                                               <td>
-                                                  75%
+                                                  {{ application.session + '%' }}
                                               </td>
                                               <td>
-                                                  75%
+                                                  {{ application.documentation + '%' }}
                                               </td>
                                               <td>
-                                                  0%
+                                                  {{ application.support + '%' }}
                                               </td>
                                               <td>
-                                                  0%
+                                                 {{ application.reverse_kt + '%' }}
                                               </td>
-                                      </tr>
-                                      <tr>
-                                              <td>
-                                                  2
-                                              </td>
-                                              <td>
-                                                  DEEP.IO
-                                              </td>
-                                              <td>
-                                                  75%
-                                              </td>
-                                              <td>
-                                                  75%
-                                              </td>
-                                              <td>
-                                                  0%
-                                              </td>
-                                              <td>
-                                                  0%
-                                              </td>
-                                      </tr>
-                                      <tr>
-                                              <td>
-                                                  3
-                                              </td>
-                                              <td>
-                                                  Order Management
-                                              </td>
-                                              <td>
-                                                  75%
-                                              </td>
-                                              <td>
-                                                  75%
-                                              </td>
-                                              <td>
-                                                  0%
-                                              </td>
-                                              <td>
-                                                  0%
-                                              </td>
-                                      </tr>
-                                      <tr>
-                                              <td>
-                                                  4
-                                              </td>
-                                              <td>
-                                                  Notifications
-                                              </td>
-                                              <td>
-                                                  75%
-                                              </td>
-                                              <td>
-                                                  75%
-                                              </td>
-                                              <td>
-                                                  0%
-                                              </td>
-                                              <td>
-                                                  0%
-                                              </td>
-                                      </tr>
-                                      <tr>
-                                              <td>
-                                                  5
-                                              </td>
-                                              <td>
-                                                  Sterling Configurator
-                                              </td>
-                                              <td>
-                                                  75%
-                                              </td>
-                                              <td>
-                                                  75%
-                                              </td>
-                                              <td>
-                                                  0%
-                                              </td>
-                                              <td>
-                                                  0%
-                                              </td>
-                                      </tr>
+                                        </tr>
                                 </tbody>
                                 <tfoot class="text-center">
                                   <tr>
                                       <td></td>
-                                      <td>Weighted Avg</td>
-                                      <td>100%</td>
-                                      <td>100%</td>
-                                      <td>100%</td>
-                                      <td>100%</td>
+                                      <td>{{ applications.weighted_avg.name }}</td>
+                                      <td>{{ applications.weighted_avg.session + '%' }}</td>
+                                      <td>{{ applications.weighted_avg.documentation + '%' }}</td>
+                                      <td>{{ applications.weighted_avg.support + '%'}}</td>
+                                      <td>{{ applications.weighted_avg.reverse_kt + '%' }}</td>
                                   </tr>
                                 </tfoot>
                             </table><br>

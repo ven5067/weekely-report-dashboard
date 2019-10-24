@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from 'app/services/dashboard.service';
 
 @Component({
   selector: 'app-calendar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalendarComponent implements OnInit {
 
-  constructor() { }
+  calendar: any = {};
+  objectKeys = Object.keys;
+
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
+    this.calendar = this.dashboardService.dashboardData.transition_calendar;
   }
 
 }

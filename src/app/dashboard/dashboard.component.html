@@ -36,15 +36,9 @@
                           <div class="nav-tabs-wrapper">
                               <span class="nav-tabs-title">Tasks:</span>
                               <ul class="nav nav-tabs" data-tabs="tabs">
-                                  <li class="nav-item">
-                                      <a mat-button class="nav-link active" href="#achievements" data-toggle="tab">
-                                          <i class="material-icons">check_circle</i> achievements
-                                          <div class="ripple-container"></div>
-                                      </a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a mat-button class="nav-link" href="#risks" data-toggle="tab">
-                                          <i class="material-icons">rowing</i> Risks & Mitigations
+                                  <li class="nav-item" *ngFor="let item of objectKeys(tasks); let i = index;">
+                                      <a mat-button class="nav-link active" [ngClass]="{active: i === 0}" [href]="'#'+ item" data-toggle="tab">
+                                          <i class="material-icons">check_circle</i> {{item}}
                                           <div class="ripple-container"></div>
                                       </a>
                                   </li>
@@ -54,10 +48,10 @@
                   </div>
                   <div class="card-body">
                       <div class="tab-content">
-                          <div class="tab-pane active" id="achievements">
-                              <table class="table" style="width: 70%;">
+                          <div class="tab-pane" [ngClass]="{active: i === 0}" *ngFor="let item of objectKeys(tasks); let i = index;" [id]="item">
+                              <table class="table" style="width: 70%;" *ngIf="isArray(tasks[item]); else other">
                                   <tbody>
-                                      <tr>
+                                      <tr *ngFor="let achievement of tasks[item]">
                                           <td>
                                               <div class="form-check">
                                                   <label class="form-check-label">
@@ -65,79 +59,58 @@
                                                   </label>
                                               </div>
                                           </td>
-                                          <td>Wave 2 application KT kicked off</td>
-                                      </tr>
-                                      <tr>
-                                          <td>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                  <i class="material-icons">done</i>
-                                                </label>
-                                            </div>
-                                          </td>
-                                          <td>Triage process explanations and team's understanding of operations enhnaced</td>
-                                      </tr>
-                                      <tr>
-                                          <td>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                  <i class="material-icons">done</i>
-                                                </label>
-                                            </div>
-                                          </td>
-                                          <td>Apigee walkthrough - futher session to continue the week next
-                                          </td>
+                                          <td>{{ achievement }}</td>
                                       </tr>
                                   </tbody>
                               </table>
-                          </div>
-                          <div class="tab-pane" id="risks">
-                            <table class="table">
-                                <thead class=" text-danger">
-                                    <th>
-                                        Area
-                                    </th>
-                                    <th>
-                                        Risk Details
-                                    </th>
-                                    <th>
-                                        Impact(1-5)
-                                    </th>
-                                    <th>
-                                        Mitigation Plan
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            Tools/Env/Process
-                                        </td>
-                                        <td>
-                                            Triage process specifics/documentation
-                                        </td>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>
-                                            Increase shadow support time
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Application KT
-                                        </td>
-                                        <td>
-                                            Coverage of critical applications/operations other than Dice
-                                        </td>
-                                        <td>
-                                            5
-                                        </td>
-                                        <td>
-                                            Schedule SME time for KT sessions and shadow opearions team
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                              <ng-template #other>
+                                    <table class="table text-center">
+                                            <thead class=" text-danger">
+                                                <th>
+                                                    Area
+                                                </th>
+                                                <th>
+                                                    Risk Details
+                                                </th>
+                                                <th>
+                                                    Impact(1-5)
+                                                </th>
+                                                <th>
+                                                    Mitigation Plan
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        Tools/Env/Process
+                                                    </td>
+                                                    <td>
+                                                        Triage process specifics/documentation
+                                                    </td>
+                                                    <td>
+                                                        2
+                                                    </td>
+                                                    <td>
+                                                        Increase shadow support time
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        Application KT
+                                                    </td>
+                                                    <td>
+                                                        Coverage of critical applications/operations other than Dice
+                                                    </td>
+                                                    <td>
+                                                        5
+                                                    </td>
+                                                    <td>
+                                                        Schedule SME time for KT sessions and shadow opearions team
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                              </ng-template>
                           </div>
                       </div>
                   </div>

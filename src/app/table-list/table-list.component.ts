@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from 'app/services/dashboard.service';
 
 @Component({
   selector: 'app-table-list',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableListComponent implements OnInit {
 
-  constructor() { }
+  applications: any = {};
+
+  constructor(private dashboardService: DashboardService) {
+    this.applications = this.dashboardService.dashboardData.applications;
+   }
 
   ngOnInit() {
+    console.log('this.dashboardService.dashboardData.applications', this.dashboardService.dashboardData.applications);
+    
   }
 
 }

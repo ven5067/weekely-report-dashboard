@@ -62,4 +62,24 @@
             </a>
         </li>
     </ul>
+    <ul class="nav" style="margin: 20% 0 0 10%;">
+        <li>
+            <div>
+                <p><strong>Project Started On:</strong></p>
+                <p>{{startDate | date}}</p>
+            </div><br>
+        </li>
+        <li>
+            <div>
+                <p><strong>Days Completed:</strong></p>
+                <p>{{daysCompleted + 'd'}}</p>
+            </div><br>
+        </li>
+        <li>
+            <div>  
+                <p><strong>Days Remaining:</strong></p>
+                <p><span id="timer"></span></p>
+            </div>
+        </li>
+    </ul>
 </div>

@@ -10,7 +10,7 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -20,7 +20,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     HttpModule,
     ComponentsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,

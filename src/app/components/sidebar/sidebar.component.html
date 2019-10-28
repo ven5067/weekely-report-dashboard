@@ -66,19 +66,19 @@
         <li>
             <div>
                 <p><strong>Project Started On:</strong></p>
-                <p style="font-weight: 600; color: #e94542; margin: 0;">{{startDate | date}}</p>
+                <p class="text-danger">{{startDate | date}}</p>
             </div><br>
         </li>
         <li>
             <div>
                 <p><strong>Days Completed:</strong></p>
-                <h3 style="font-weight: 600; color: #e94542; margin: 0;">{{daysCompleted + 'd'}}</h3>
+                <h3 class="text-danger">{{daysCompleted + 'd'}}</h3>
             </div><br>
         </li>
         <li>
             <div>  
                 <p><strong>Days Remaining:</strong></p>
-                <p style="font-weight: 600; color: #e94542; margin: 0;"><span id="timer"></span></p>
+                <p class="text-danger"><span id="timer"></span></p>
             </div>
         </li>
     </ul>

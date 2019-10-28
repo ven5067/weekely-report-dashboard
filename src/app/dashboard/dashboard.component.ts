@@ -33,12 +33,12 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if(navigator.appVersion.includes('Windows')){
+    // if(navigator.appVersion.includes('Windows')){
       let htmlCollection= document.getElementsByTagName('rect');
       for(let i=0; i < htmlCollection.length; i++) {
-        htmlCollection[i].setAttribute('width', '30%');
+        if(htmlCollection[i]) htmlCollection[i].setAttribute('width', '30%');
       }
-    }
+    // }
   }
 
   public onReady() {

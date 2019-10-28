@@ -111,157 +111,157 @@ export class DashboardService {
                 "reverse_kt": 0
             },
             {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
+                "name": "DICE-FMS ((TIBCO [CE And BW]/RSP/ DSG Spring)",
                 "session": 100,
                 "documentation": 100,
                 "support": 0,
                 "reverse_kt": 0
             },
             {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
+                "name": "DICE-CAPS ((TIBCO [CE And BW]/RSP/ DSG Spring)",
                 "session": 100,
                 "documentation": 100,
                 "support": 0,
                 "reverse_kt": 0
             },
             {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
+                "name": "DICE-DTIS ((TIBCO [CE And BW]/RSP/DSG Spring)",
                 "session": 100,
                 "documentation": 100,
                 "support": 0,
                 "reverse_kt": 0
             },
             {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
+                "name": "DICE-UMS ((TIBCO [CE And BW]/RSP/DSG Spring)",
                 "session": 100,
                 "documentation": 100,
                 "support": 0,
                 "reverse_kt": 0
             },
             {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
+                "name": "Distributed Services Platform API (DSPA)",
+                "session": 0,
+                "documentation": 0,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "Customer Profile",
+                "session": 0,
+                "documentation": 0,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "APIGEE",
+                "session": 75,
+                "documentation": 75,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "EBS (OMNI Legacy)",
+                "session": 50,
+                "documentation": 50,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "IBM Sterling Order Management Systems - OMS/OMNI U1 & U2",
+                "session": 50,
+                "documentation": 50,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "Order API",
+                "session": 50,
+                "documentation": 50,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "Order Fulfillment",
+                "session": 50,
+                "documentation": 50,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "Sterling Configurator",
+                "session": 0,
+                "documentation": 0,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "ODC",
+                "session": 25,
+                "documentation": 25,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "Operational Decision Manager -  ODM",
+                "session": 50,
+                "documentation": 0,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "DSG Tibco U2",
+                "session": 0,
+                "documentation": 0,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "IBM WebSphere Commerce Search (WCS)",
+                "session": 0,
+                "documentation": 0,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "Notification",
+                "session": 50,
+                "documentation": 50,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "MetroPCS",
+                "session": 25,
+                "documentation": 25,
+                "support": 0,
+                "reverse_kt": 0
+            },
+            {
+                "name": "Deep.io",
                 "session": 100,
                 "documentation": 100,
                 "support": 0,
                 "reverse_kt": 0
             },
             {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
+                "name": "Sentry / Customer Hub (CHUB) (U1 & U2)",
+                "session": 0,
+                "documentation": 0,
                 "support": 0,
                 "reverse_kt": 0
             },
             {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
-                "support": 0,
-                "reverse_kt": 0
-            },
-            {
-                "name": "DICE-BIMS (TIBCO [CE And BW]/RSP/ DSG Spring)",
-                "session": 100,
-                "documentation": 100,
+                "name": "EDGE",
+                "session": 50,
+                "documentation": 50,
                 "support": 0,
                 "reverse_kt": 0
             }
         ],
         "weighted_avg": {
             "name": "Weighted Average",
-            "session": 100,
-            "documentation": 100,
+            "session": 51,
+            "documentation": 51,
             "support": 0,
             "reverse_kt": 0
         },

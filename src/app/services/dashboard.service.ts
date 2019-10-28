@@ -54,31 +54,7 @@ export class DashboardService {
                     "description": "some text"
                 }
             }
-        ],
-        "tasks": {
-            "achievements": [
-                "Wave 2 application KT kicked off",
-                "Triage process explanations and team's understanding of operations enhnaced",
-                "Apigee walkthrough - futher session to continue the week next"
-            ],
-            "risks_mitigations": {
-                "headers": ["Area", "Risk Details", "Impact (1-5)", "Mitigation Plan"],
-                "data": [
-                    {
-                        "area": "Tools/Env/Process",
-                        "risk_details": "Triage process specifics/documentation",
-                        "impact": "2",
-                        "mitigation_plan": "Increase shadow support time"
-                    },
-                    {
-                        "area": "Application KT",
-                        "risk_details": "Coverage of critical applications/operations other than Dice",
-                        "impact": "5",
-                        "mitigation_plan": "Schedule SME time for KT sessions and shadow opearions team"
-                    }
-                ]
-            }
-        }
+        ]
     },
     "org_chart": [
         {
@@ -365,6 +341,37 @@ export class DashboardService {
                 }
             ]
         }
+    },
+    "risks_mitigations": {
+      "achievements": [
+          "Wave 2 application KT kicked off",
+          "Triage process explanations and team's understanding of operations enhnaced",
+          "Apigee walkthrough - futher session to continue the week next"
+      ],
+      "risks_mitigations": {
+          "headers": ["Area", "Risk Details", "Impact (1-5)", "Mitigation Plan"],
+          "data": [
+              {
+                  "area": "Tools/Env/Process",
+                  "risk_details": "Triage process specifics/documentation",
+                  "impact": "2",
+                  "mitigation_plan": "Increase shadow support time"
+              },
+              {
+                  "area": "Application KT",
+                  "risk_details": "Coverage of critical applications/operations other than Dice",
+                  "impact": "5",
+                  "mitigation_plan": "Schedule SME time for KT sessions and shadow opearions team"
+              }
+          ]
+      }
+  },
+    "features": {
+      "orgChart": false,
+      "dashboard": true,
+      "applications": true,
+      "calendar": true,
+      "risksMitigations": true
     }
 };
 

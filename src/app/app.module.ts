@@ -11,6 +11,7 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RisksMitigationsComponent } from './risks-mitigations/risks-mitigations.component';
 
 @NgModule({
   imports: [

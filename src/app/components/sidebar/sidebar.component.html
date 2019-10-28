@@ -36,13 +36,13 @@
                     <span class="d-lg-none d-md-block">Some Actions</span>
                 </p>
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Mike John responded to your email</a>
                 <a class="dropdown-item" href="#">You have 5 new tasks</a>
                 <a class="dropdown-item" href="#">You're now friend with Andrew</a>
                 <a class="dropdown-item" href="#">Another Notification</a>
                 <a class="dropdown-item" href="#">Another One</a>
-            </div>
+            </div> -->
         </li>
         <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">
@@ -66,19 +66,19 @@
         <li>
             <div>
                 <p><strong>Project Started On:</strong></p>
-                <p>{{startDate | date}}</p>
+                <p style="font-weight: 600; color: #e94542; margin: 0;">{{startDate | date}}</p>
             </div><br>
         </li>
         <li>
             <div>
                 <p><strong>Days Completed:</strong></p>
-                <p>{{daysCompleted + 'd'}}</p>
+                <h3 style="font-weight: 600; color: #e94542; margin: 0;">{{daysCompleted + 'd'}}</h3>
             </div><br>
         </li>
         <li>
             <div>  
                 <p><strong>Days Remaining:</strong></p>
-                <p><span id="timer"></span></p>
+                <p style="font-weight: 600; color: #e94542; margin: 0;"><span id="timer"></span></p>
             </div>
         </li>
     </ul>

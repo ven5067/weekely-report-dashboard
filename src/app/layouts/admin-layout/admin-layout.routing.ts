@@ -4,11 +4,13 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { TableListComponent } from 'app/table-list/table-list.component';
 import { ProfilesComponent } from 'app/profiles/profiles.component';
 import { CalendarComponent } from 'app/calendar/calendar.component';
+import { RisksMitigationsComponent } from 'app/risks-mitigations/risks-mitigations.component';
 
 export const AdminLayoutRoutes: Routes = [
    
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'profiles',   component: ProfilesComponent },
+    { path: 'org-chart',   component: ProfilesComponent },
     { path: 'applications', component: TableListComponent},
-    { path: 'calendar', component: CalendarComponent }
+    { path: 'calendar', component: CalendarComponent },
+    { path: 'risks-mitigations', component: RisksMitigationsComponent}
 ];

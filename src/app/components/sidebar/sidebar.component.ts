@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from 'app/services/dashboard.service';
 
 declare const $: any;
 declare interface RouteInfo {
+    id: string;
     path: string;
     title: string;
     icon: string;
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/profiles', title: 'Org Chart',  icon:'group', class: '' },
-    { path: '/applications', title: 'Applications',  icon:'apps', class: '' },
-    { path: '/calendar', title: 'Trasition Calendar',  icon:'schedule', class: '' }
+    { id: 'dashboard', path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+    { id: 'orgChart', path: '/org-chart', title: 'Org Chart',  icon:'group', class: '' },
+    { id: 'applications', path: '/applications', title: 'Applications',  icon:'apps', class: '' },
+    { id: 'calendar', path: '/calendar', title: 'Trasition Calendar',  icon:'schedule', class: '' },
+    { id: 'risksMitigations', path: '/risks-mitigations', title: 'Risks and Mitigations',  icon:'rowing', class: '' }
 ];
 
 @Component({
@@ -26,10 +29,13 @@ export class SidebarComponent implements OnInit {
   endDate = new Date("Dec 01, 2019");
   daysCompleted = Math.floor((new Date().getTime() - this.startDate.getTime()) / (1000 * 60 * 60 * 24));
 
-  constructor() { }
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuItems = ROUTES.filter(menuItem => {
+      if(!this.dashboardService.dashboardData.features[menuItem.id]) return false;
+      return true;
+    });
 
     const deadline = this.endDate.getTime(); 
     const x = setInterval(function() { 

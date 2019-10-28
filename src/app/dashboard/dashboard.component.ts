@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ChartEvent, ChartErrorEvent, GoogleChartComponent } from 'angular-google-charts';
 import { Router } from '@angular/router';
 import { DashboardService } from 'app/services/dashboard.service';
@@ -8,7 +8,7 @@ import { DashboardService } from 'app/services/dashboard.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, AfterViewInit {
   public charts: Array<{
     title: string;
     type: string;
@@ -30,7 +30,15 @@ export class DashboardComponent implements OnInit {
     private dashboardService: DashboardService
   ) {
     this.charts = this.dashboardService.dashboardData.dashboard.charts;
-    this.tasks = this.dashboardService.dashboardData.dashboard.tasks;
+  }
+
+  ngAfterViewInit() {
+    if(navigator.appVersion.includes('Windows')){
+      let htmlCollection= document.getElementsByTagName('rect');
+      for(let i=0; i < htmlCollection.length; i++) {
+        htmlCollection[i].setAttribute('width', '30%');
+      }
+    }
   }
 
   public onReady() {

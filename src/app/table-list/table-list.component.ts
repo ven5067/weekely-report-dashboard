@@ -16,7 +16,6 @@ export class TableListComponent implements OnInit {
 
   ngOnInit() {
     console.log('this.dashboardService.dashboardData.applications', this.dashboardService.dashboardData.applications);
-    
   }
 
 }

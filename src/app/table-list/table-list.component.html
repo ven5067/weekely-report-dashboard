@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Applications</h4>
-                        <p class="card-category"> Sub-title</p>
+                        <!-- <p class="card-category"> Sub-title</p> -->
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -19,7 +19,7 @@
                                 <tbody class="text-center" *ngFor="let application of applications.data; let i = index;">
                                       <tr>
                                               <td>
-                                                  {{ i }}
+                                                  {{ i + 1 }}
                                               </td>
                                               <td class="text-left">
                                                   {{ application.name }}
@@ -38,7 +38,7 @@
                                               </td>
                                         </tr>
                                 </tbody>
-                                <tfoot class="text-center table-warning">
+                                <!-- <tfoot class="text-center table-warning">
                                   <tr>
                                       <td></td>
                                       <td>{{ applications.weighted_avg.name }}</td>
@@ -47,16 +47,16 @@
                                       <td>{{ applications.weighted_avg.support + '%'}}</td>
                                       <td>{{ applications.weighted_avg.reverse_kt + '%' }}</td>
                                   </tr>
-                                </tfoot>
+                                </tfoot> -->
                             </table><br>
-                            <div class="row">
+                            <!-- <div class="row">
                                   <div class="col-md-12">
                                       <i class="fa fa-circle text-info"></i> Basic Session (25%) 
                                       <i class="fa fa-circle text-warning pl-3"></i> One Session (50%) 
                                       <i class="fa fa-circle text-danger pl-3"></i> No More Sessions (75%) 
                                       <i class="fa fa-circle text-success pl-3"></i> All Reviewed (100%) 
                                   </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

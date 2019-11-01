@@ -14,7 +14,8 @@ export const ROUTES: RouteInfo[] = [
     { id: 'orgChart', path: '/org-chart', title: 'Org Chart',  icon:'group', class: '' },
     { id: 'applications', path: '/applications', title: 'Applications',  icon:'apps', class: '' },
     { id: 'calendar', path: '/calendar', title: 'Trasition Calendar',  icon:'schedule', class: '' },
-    { id: 'risksMitigations', path: '/risks-mitigations', title: 'Risks and Mitigations',  icon:'rowing', class: '' }
+    { id: 'risksMitigations', path: '/risks-mitigations', title: 'Risks & Mitigations',  icon:'rowing', class: '' },
+    { id: 'observations', path: '/observations', title: 'Observations & Improvements ',  icon:'search', class: '' }
 ];
 
 @Component({
@@ -26,7 +27,7 @@ export class SidebarComponent implements OnInit {
   menuItems: any[];
 
   startDate = new Date("Sep 30, 2019");
-  endDate = new Date("Dec 01, 2019");
+  endDate = new Date("Dec 02, 2019");
   daysCompleted = Math.floor((new Date().getTime() - this.startDate.getTime()) / (1000 * 60 * 60 * 24));
 
   constructor(private dashboardService: DashboardService) { }

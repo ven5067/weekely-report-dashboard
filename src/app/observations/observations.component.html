@@ -1,0 +1,35 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Observations</h4>
+                      <!-- <p class="card-category"> Sub-title</p> -->
+                  </div>
+                  <div class="card-body">
+                    <div class="accordion" id="accordionExample">
+                      <div class="card" *ngFor="let observation of observations; let i = index;">
+                        <div class="card-header" id="headingOne">
+                          <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <strong class="text-black">{{ observation.observation }}</strong>
+                            </button>
+                          </h2>
+                        </div>
+                    
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                          <div class="card-body">
+                              <ul>
+                                <li *ngFor="let resolution of observation.resolutions"> {{ resolution }}</li>
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

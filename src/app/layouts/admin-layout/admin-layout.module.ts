@@ -19,6 +19,7 @@ import { ProfilesComponent } from 'app/profiles/profiles.component';
 import { CalendarComponent } from 'app/calendar/calendar.component';
 import { NotificationsComponent } from 'app/notifications/notifications.component';
 import { RisksMitigationsComponent } from 'app/risks-mitigations/risks-mitigations.component';
+import { ObservationsComponent } from 'app/observations/observations.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { RisksMitigationsComponent } from 'app/risks-mitigations/risks-mitigatio
     TableListComponent,
     CalendarComponent,
     NotificationsComponent,
-    RisksMitigationsComponent
+    RisksMitigationsComponent,
+    ObservationsComponent
   ]
 })
 

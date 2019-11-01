@@ -5,6 +5,7 @@ import { TableListComponent } from 'app/table-list/table-list.component';
 import { ProfilesComponent } from 'app/profiles/profiles.component';
 import { CalendarComponent } from 'app/calendar/calendar.component';
 import { RisksMitigationsComponent } from 'app/risks-mitigations/risks-mitigations.component';
+import { ObservationsComponent } from 'app/observations/observations.component';
 
 export const AdminLayoutRoutes: Routes = [
    
@@ -12,5 +13,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'org-chart',   component: ProfilesComponent },
     { path: 'applications', component: TableListComponent},
     { path: 'calendar', component: CalendarComponent },
-    { path: 'risks-mitigations', component: RisksMitigationsComponent}
+    { path: 'risks-mitigations', component: RisksMitigationsComponent},
+    { path: 'observations', component: ObservationsComponent}
 ];

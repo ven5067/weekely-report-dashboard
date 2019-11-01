@@ -30,23 +30,38 @@
                                 </thead>
                                 <tbody>
                                   <tr *ngFor="let day of calendar[key].data">
-                                    <td>
+                                    <!-- <td>
                                       {{ day.topic }}
+                                    </td> -->
+                                    <td>
+                                      <ul>
+                                        <li *ngFor="let task of day.moday"> {{ task }}</li>
+                                      </ul>
+                                      <!-- {{ day.moday }} -->
                                     </td>
                                     <td>
-                                      {{ day.moday }}
+                                        <ul>
+                                          <li *ngFor="let task of day.tuesday"> {{ task }}</li>
+                                        </ul>
+                                      <!-- {{ day.tuesday }} -->
                                     </td>
                                     <td>
-                                      {{ day.tuesday }}
+                                        <ul>
+                                            <li *ngFor="let task of day.wednesday"> {{ task }}</li>
+                                        </ul>
+                                      <!-- {{ day.wednesday }} -->
                                     </td>
                                     <td>
-                                      {{ day.wednesday }}
+                                        <ul>
+                                            <li *ngFor="let task of day.thursday"> {{ task }}</li>
+                                        </ul>
+                                      <!-- {{ day.thursday }} -->
                                     </td>
                                     <td>
-                                      {{ day.thursday }}
-                                    </td>
-                                    <td>
-                                      {{ day.friday }}
+                                        <ul>
+                                            <li *ngFor="let task of day.friday"> {{ task }}</li>
+                                        </ul>
+                                      <!-- {{ day.friday }} -->
                                     </td>
                                   </tr>
                                 </tbody>

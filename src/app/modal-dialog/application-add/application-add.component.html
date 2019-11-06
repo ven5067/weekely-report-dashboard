@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Add Application</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+    <label> Application Name: </label>  
+    <input type="text" formControlName="name" class="form-control">
+  
+    <label> Session:</label>
+    <input type="number" formControlName="session" class="form-control">
+
+    <label> Documentation:</label>
+    <input type="number" formControlName="documentation" class="form-control">
+
+    <label> Support:</label>
+    <input type="number" formControlName="shadowSupport" class="form-control">
+
+    <label> Reverse KT: </label>
+    <input type="number" formControlName="reverseKT" class="form-control"><br>
+  
+    <button mat-button mat-dialog-close class="btn btn-danger">Close</button>
+    <button type="submit" class="btn">Save</button>
+  </form>
+</mat-dialog-content>

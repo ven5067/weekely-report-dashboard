@@ -11,8 +11,14 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RisksMitigationsComponent } from './risks-mitigations/risks-mitigations.component';
-import { ObservationsComponent } from './observations/observations.component';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
+import { ApplicationAddComponent } from './modal-dialog/application-add/application-add.component';
+import { ApplicationEditComponent } from './modal-dialog/application-edit/application-edit.component';
+import { ObservationsDialogComponent } from './modal-dialog/observations-dialog/observations-dialog.component';
+import { RiskDialogComponent } from './modal-dialog/risk-dialog/risk-dialog.component';
+import { AchievementDialogComponent } from './modal-dialog/achievement-dialog/achievement-dialog.component';
+import { FocusDialogComponent } from './modal-dialog/focus-dialog/focus-dialog.component';
+import { LoginDialogComponent } from './modal-dialog/login-dialog/login-dialog.component';
 
 @NgModule({
   imports: [
@@ -23,13 +29,32 @@ import { ObservationsComponent } from './observations/observations.component';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    ApplicationAddComponent,
+    ApplicationEditComponent,
+    ObservationsDialogComponent,
+    RiskDialogComponent,
+    AchievementDialogComponent,
+    FocusDialogComponent,
+    LoginDialogComponent
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ApplicationAddComponent,
+    ApplicationEditComponent,
+    ObservationsDialogComponent,
+    RiskDialogComponent,
+    AchievementDialogComponent,
+    FocusDialogComponent,
+    LoginDialogComponent
+  ]
 })
 export class AppModule { }

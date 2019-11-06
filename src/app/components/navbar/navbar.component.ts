@@ -2,6 +2,9 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { LoginDialogComponent } from 'app/modal-dialog/login-dialog/login-dialog.component';
+import { UserService } from 'app/services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,13 +14,19 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
     private listTitles: any[];
     location: Location;
-      mobile_menu_visible: any = 0;
+    mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef, private router: Router) {
+    constructor(
+        location: Location,
+        private element: ElementRef, 
+        private router: Router,
+        public dialog: MatDialog,
+        private userService: UserService
+    ) {
       this.location = location;
-          this.sidebarVisible = false;
+      this.sidebarVisible = false;
     }
 
     ngOnInit(){
@@ -122,4 +131,19 @@ export class NavbarComponent implements OnInit {
       }
       return 'Dashboard';
     }
+
+    openDialog() {
+        this.dialog.closeAll();
+        const dialogRef = this.dialog.open(LoginDialogComponent, {
+          width: '600px'
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
+
+      logout() {
+          this.userService.logout();
+      }
 }

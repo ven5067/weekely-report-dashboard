@@ -1,7 +1,7 @@
 <div class="main-content">
   <div class="container-fluid">
       <div class="row">
-          <div class="col-md-6" *ngFor="let chart of charts">
+          <div class="col-md-6" *ngFor="let chart of charts$ | async">
               <div class="card card-chart">
                   <div class="card-header">
                         <google-chart
@@ -16,15 +16,15 @@
                         </google-chart>
                   </div>
                   <div class="card-body">
-                      <h4 class="card-title">{{chart.body.title}}</h4>
+                      <h4 class="card-title text-center">{{chart.title}}</h4>
                       <p class="card-category">
                       <!-- <span [innerHTML]="chart.body.description"></span> -->
                   </div>
-                  <div class="card-footer">
+                  <!-- <div class="card-footer">
                       <div class="stats">
                           <i class="material-icons">access_time</i> updated 4 minutes ago
                       </div>
-                  </div>
+                  </div> -->
               </div>
           </div>
       </div>

@@ -30,38 +30,30 @@
                                 </thead>
                                 <tbody>
                                   <tr *ngFor="let day of calendar[key].data">
-                                    <!-- <td>
-                                      {{ day.topic }}
-                                    </td> -->
                                     <td>
                                       <ul>
                                         <li *ngFor="let task of day.moday"> {{ task }}</li>
                                       </ul>
-                                      <!-- {{ day.moday }} -->
                                     </td>
                                     <td>
                                         <ul>
                                           <li *ngFor="let task of day.tuesday"> {{ task }}</li>
                                         </ul>
-                                      <!-- {{ day.tuesday }} -->
                                     </td>
                                     <td>
                                         <ul>
                                             <li *ngFor="let task of day.wednesday"> {{ task }}</li>
                                         </ul>
-                                      <!-- {{ day.wednesday }} -->
                                     </td>
                                     <td>
                                         <ul>
                                             <li *ngFor="let task of day.thursday"> {{ task }}</li>
                                         </ul>
-                                      <!-- {{ day.thursday }} -->
                                     </td>
                                     <td>
                                         <ul>
                                             <li *ngFor="let task of day.friday"> {{ task }}</li>
                                         </ul>
-                                      <!-- {{ day.friday }} -->
                                     </td>
                                   </tr>
                                 </tbody>

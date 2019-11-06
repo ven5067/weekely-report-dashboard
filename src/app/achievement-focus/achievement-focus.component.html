@@ -1,0 +1,107 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-tabs card-header-danger">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <span class="nav-tabs-title">Tasks:</span>
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                            <li class="nav-item">
+                                                <a mat-button class="nav-link active" href="#achievement"
+                                                    data-toggle="tab" (click)="onTab('Achievements')">
+                                                    <i class="material-icons">check_circle</i> Achievement
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a mat-button class="nav-link" href="#focus" data-toggle="tab" (click)="onTab('Focus')">
+                                                    <i class="material-icons">check_circle</i> Focus
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-1" *ngIf="userService.isAdmin$ | async">
+                                        <button mat-button (click)="openDialog()" *ngIf="currentTab === 'Achievements'">Add <i class="material-icons">add</i> </button>
+                                        <button mat-button (click)="openFocusDialog()" *ngIf="currentTab === 'Focus'">Add <i class="material-icons">add</i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="achievement">
+                                <table class="table" style="width: 100%;">
+                                    <tbody>
+                                        <tr *ngFor="let achievement of achievements$ | async; let i = index;">
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <i class="material-icons">done</i>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>{{ achievement.achievement}}</td>
+                                            <td class="td-actions" *ngIf="userService.isAdmin$ | async">
+                                                <button type="button" class="btn btn-success btn-link"
+                                                    (click)="editDialog(achievement)"><span
+                                                        class="mat-button-wrapper"><i
+                                                            class="material-icons">edit</i></span>
+                                                    <div class="mat-button-ripple mat-ripple"></div>
+                                                    <div class="mat-button-focus-overlay"></div>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-link"
+                                                    (click)="delete(achievement.id)"><span class="mat-button-wrapper"><i
+                                                            class="material-icons">close</i></span>
+                                                    <div class="mat-button-ripple mat-ripple"></div>
+                                                    <div class="mat-button-focus-overlay"></div>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane" id="focus">
+                                <table class="table" style="width: 100%;">
+                                    <tbody>
+                                        <tr *ngFor="let focus of focusList$ | async; let i = index;">
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <i class="material-icons">done</i>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>{{ focus.focus}}</td>
+                                            <td class="td-actions d-flex justify-content-center align-items-center" *ngIf="userService.isAdmin$ | async">
+                                                <button type="button" class="btn btn-success btn-link"
+                                                    (click)="editFocusDialog(focus)"><span class="mat-button-wrapper"><i
+                                                            class="material-icons">edit</i></span>
+                                                    <div class="mat-button-ripple mat-ripple"></div>
+                                                    <div class="mat-button-focus-overlay"></div>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-link"
+                                                    (click)="deleteFocus(focus.id)"><span class="mat-button-wrapper"><i
+                                                            class="material-icons">close</i></span>
+                                                    <div class="mat-button-ripple mat-ripple"></div>
+                                                    <div class="mat-button-focus-overlay"></div>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

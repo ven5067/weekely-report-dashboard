@@ -7,59 +7,67 @@
                         <div class="nav-tabs-navigation">
                             <div class="nav-tabs-wrapper">
                                 <span class="nav-tabs-title">Tasks:</span>
-                                <ul class="nav nav-tabs" data-tabs="tabs">
-                                    <li class="nav-item" *ngFor="let item of objectKeys(risks_mitigations); let i = index;">
-                                        <a mat-button class="nav-link active" [ngClass]="{active: i === 0}" [href]="'#'+ item" data-toggle="tab">
-                                            <i class="material-icons">check_circle</i> {{item}}
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
+                                            <li class="nav-item">
+                                                <a mat-button class="nav-link active" href="#risks" data-toggle="tab">
+                                                    <i class="material-icons">check_circle</i> Risks
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button mat-button (click)="openRiskDialog()" *ngIf="userService.isAdmin$ | async">Add
+                                            <i class="material-icons">add</i> </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
-                            <div class="tab-pane" [ngClass]="{active: i === 0}" *ngFor="let item of objectKeys(risks_mitigations); let i = index;" [id]="item">
-                                <table class="table" style="width: 70%;" *ngIf="isArray(risks_mitigations[item]); else other">
+                            <div class="tab-pane active" id="risks">
+                                <table class="table text-center">
+                                    <thead class=" text-danger">
+                                        <th>Area</th>
+                                        <th>Risk Details</th>
+                                        <th>Impact (1-5)</th>
+                                        <th>Mitigation Plan</th>
+                                        <th *ngIf="userService.isAdmin$ | async">Actions</th>
+                                    </thead>
                                     <tbody>
-                                        <tr *ngFor="let achievement of risks_mitigations[item]">
+                                        <tr *ngFor="let risk of risks$ | async; let i = index;">
                                             <td>
-                                                <div class="form-check">
-                                                    <label class="form-check-label">
-                                                      <i class="material-icons">done</i>
-                                                    </label>
-                                                </div>
+                                                {{ risk.area }}
                                             </td>
-                                            <td>{{ achievement }}</td>
+                                            <td>
+                                                {{ risk.riskDetails }}
+                                            </td>
+                                            <td>
+                                                {{ risk.impact }}
+                                            </td>
+                                            <td>
+                                                {{ risk.migrationPlan }}
+                                            </td>
+                                            <td class="td-actions d-flex justify-content-center align-items-center" *ngIf="userService.isAdmin$ | async">
+                                                <button type="button" class="btn btn-success btn-link"
+                                                    (click)="editRiskDialog(risk)"><span class="mat-button-wrapper"><i
+                                                            class="material-icons">edit</i></span>
+                                                    <div class="mat-button-ripple mat-ripple"></div>
+                                                    <div class="mat-button-focus-overlay"></div>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-link"
+                                                    (click)="deleteRisk(risk.id)"><span class="mat-button-wrapper"><i
+                                                            class="material-icons">close</i></span>
+                                                    <div class="mat-button-ripple mat-ripple"></div>
+                                                    <div class="mat-button-focus-overlay"></div>
+                                                </button>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <ng-template #other>
-                                      <table class="table text-center">
-                                              <thead class=" text-danger">
-                                                  <th *ngFor="let heading of risks_mitigations[item].headers">
-                                                      {{ heading }}
-                                                  </th>
-                                              </thead>
-                                              <tbody>
-                                                  <tr *ngFor="let item of risks_mitigations[item].data">
-                                                      <td>
-                                                          {{ item.area }}
-                                                      </td>
-                                                      <td>
-                                                          {{ item.risk_details }}
-                                                      </td>
-                                                      <td>
-                                                          {{ item.impact }}
-                                                      </td>
-                                                      <td>
-                                                          {{ item.mitigation_plan }}
-                                                      </td>
-                                                  </tr>
-                                              </tbody>
-                                          </table>
-                                </ng-template>
                             </div>
                         </div>
                     </div>
@@ -67,5 +75,4 @@
             </div>
         </div>
     </div>
-  </div>
-  
+</div>

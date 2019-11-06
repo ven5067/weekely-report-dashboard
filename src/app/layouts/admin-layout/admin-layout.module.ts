@@ -20,6 +20,7 @@ import { CalendarComponent } from 'app/calendar/calendar.component';
 import { NotificationsComponent } from 'app/notifications/notifications.component';
 import { RisksMitigationsComponent } from 'app/risks-mitigations/risks-mitigations.component';
 import { ObservationsComponent } from 'app/observations/observations.component';
+import { AchievementFocusComponent } from 'app/achievement-focus/achievement-focus.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import { ObservationsComponent } from 'app/observations/observations.component';
     CalendarComponent,
     NotificationsComponent,
     RisksMitigationsComponent,
-    ObservationsComponent
+    ObservationsComponent,
+    AchievementFocusComponent
   ]
 })
 

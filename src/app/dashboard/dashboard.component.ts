@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     body?: {}
   }> = [];
 
+  public charts$;
+
   public tasks: Array<any> = [];
   public objectKeys = Object.keys;
 
@@ -29,17 +31,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     private router: Router,
     private dashboardService: DashboardService
   ) {
-    this.charts = this.dashboardService.dashboardData.dashboard.charts;
+    this.charts$ = this.dashboardService.charts$;
   }
 
-  ngAfterViewInit() {
-    // if(navigator.appVersion.includes('Windows')){
-      let htmlCollection= document.getElementsByTagName('rect');
-      for(let i = 0; i < htmlCollection.length; i++) {
-        if(htmlCollection[i]) htmlCollection[i].setAttribute('width', '30%');
-      }
-    // }
-  }
+  ngAfterViewInit() {}
 
   public onReady() {
     console.log('Chart ready');
@@ -62,7 +57,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   public ngOnInit() {
-    console.log(this.chart);
+    
   }
 
   public navigateToTest() {

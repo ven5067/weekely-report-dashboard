@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Sign in</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+    <label> User Name: </label>  
+    <input type="text" formControlName="username" class="form-control">
+  
+    <label> Password:</label>
+    <input type="password" formControlName="password" class="form-control">
+  
+    <p class="text-danger" *ngIf="this.form.errors?.hasOwnProperty('isAdmin')">Incorrect username or password</p>
+    <br>
+    <button mat-button mat-dialog-close class="btn btn-danger">Close</button>
+    <button type="submit" class="btn">Sign in</button>
+  </form>
+</mat-dialog-content>

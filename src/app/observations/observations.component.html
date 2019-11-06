@@ -4,24 +4,25 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title ">Observations</h4>
-                      <!-- <p class="card-category"> Sub-title</p> -->
+                    <h4 class="card-title ">Observations & Suggestions<button *ngIf="userService.isAdmin$ | async" mat-button (click)="openDialog()" class="pull-right">Add <i class="material-icons">add</i> </button></h4>
                   </div>
                   <div class="card-body">
                     <div class="accordion" id="accordionExample">
-                      <div class="card" *ngFor="let observation of observations; let i = index;">
+                      <div class="card" *ngFor="let observation of observations$ | async; let i = index;">
                         <div class="card-header" id="headingOne">
                           <h2 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              <strong class="text-black">{{ observation.observation }}</strong>
+                              <strong class="text-black">{{ observation.name }}</strong>
                             </button>
+                            <a *ngIf="userService.isAdmin$ | async"  (click)="delete(observation.id)" class="waves-effect waves-teal btn-flat fieldLink tooltipped fieldRemoveButton pull-right mr-4 ml-1 pointer" data-tooltip="remove"><i class="material-icons fieldIcon">delete</i></a>
+                            <a *ngIf="userService.isAdmin$ | async"  (click)="openEditDialog(observation)" class="waves-effect waves-teal btn-flat fieldLink tooltipped fieldRemoveButton pull-right pointer" data-tooltip="remove"><i class="material-icons fieldIcon">edit</i></a>
                           </h2>
                         </div>
                     
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                           <div class="card-body">
                               <ul>
-                                <li *ngFor="let resolution of observation.resolutions"> {{ resolution }}</li>
+                                <li *ngFor="let resolution of observation.observations"> {{ resolution }}</li>
                               </ul>
                           </div>
                         </div>

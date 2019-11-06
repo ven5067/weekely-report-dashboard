@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from 'app/services/dashboard.service';
+import { RiskDialogComponent } from 'app/modal-dialog/risk-dialog/risk-dialog.component';
+import { MatDialog } from '@angular/material';
+import { AchievementService } from 'app/services/achievement.service';
+import { AchievementDialogComponent } from 'app/modal-dialog/achievement-dialog/achievement-dialog.component';
+import { RiskService } from 'app/services/risk.service';
+import { UserService } from 'app/services/user.service';
 
 @Component({
   selector: 'app-risks-mitigations',
@@ -8,17 +14,49 @@ import { DashboardService } from 'app/services/dashboard.service';
 })
 export class RisksMitigationsComponent {
 
-  risks_mitigations = {};
+  risks$;
   objectKeys = Object.keys;
 
+
   constructor(
-    private dashboardService: DashboardService
+    public dialog: MatDialog,
+    public riskService: RiskService,
+    public userService: UserService
   ) {
-    this.risks_mitigations = this.dashboardService.dashboardData.risks_mitigations;
+    this.risks$ = this.riskService.risks$;
   }
 
   public isArray(val) {
     return Array.isArray(val);
   } 
+
+  openRiskDialog(){
+    this.dialog.closeAll();
+    const dialogRef = this.dialog.open(RiskDialogComponent, {
+      width: '600px',
+      data: {
+        action: 'Add'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  editRiskDialog(event){
+    this.dialog.closeAll();
+    const dialogRef = this.dialog.open(RiskDialogComponent, {
+      width: '600px',
+      data: {
+        action: 'Edit',
+        data: event
+      }
+    });
+  }
+
+  deleteRisk(id) {
+    this.riskService.delete(id);
+  }
 
 }

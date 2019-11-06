@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>{{ data?.action === 'Edit'? 'Edit Observation' : 'Add Observation'}}</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="form">
+        <div>
+          <span class="fieldLabel">Name
+            <span class="right-align pull-right">
+              <a class="waves-effect waves-teal btn-flat fieldLink tooltipped fieldAddButton pointer" (click)="addNewRow(i)"
+                data-tooltip="add"><i class="material-icons fieldIcon" style="color: green">add_circle_outline</i></a>&nbsp;
+            </span></span>
+          <input formControlName="name" class="form-control">
+        </div>
+      
+        <div formArrayName="observations">
+          <div *ngFor="let itemrow of form.controls.observations.controls; let i=index" [formGroupName]="i">
+            <div class="mt-3">
+              <span class="fieldLabel">Description #{{ i + 1 }}
+                <span class="right-align pull-right">
+                  <a class="waves-effect waves-teal btn-flat fieldLink tooltipped fieldRemoveButton pointer"
+                    (click)="deleteRow(i)" data-tooltip="remove"><i class="material-icons fieldIcon"
+                      style="color: red">remove_circle_outline</i></a>&nbsp;
+                </span></span>
+              <input formControlName="observation" class="form-control">
+            </div>
+          </div>
+        </div>
+      
+        <br>
+        <button (click)="closeDialog()" type="button" class="btn btn-danger">Close</button>
+        <button (click)="onSubmit()" type="button" class="btn">Save</button>
+      </form>      
+</mat-dialog-content>

@@ -14,8 +14,9 @@ export const ROUTES: RouteInfo[] = [
     { id: 'orgChart', path: '/org-chart', title: 'Org Chart',  icon:'group', class: '' },
     { id: 'applications', path: '/applications', title: 'Applications',  icon:'apps', class: '' },
     { id: 'calendar', path: '/calendar', title: 'Trasition Calendar',  icon:'schedule', class: '' },
+    { id: 'achievementsFocus', path: '/achievements-focus', title: 'Achievements & Focus',  icon:'assistant_photo', class: '' },
     { id: 'risksMitigations', path: '/risks-mitigations', title: 'Risks & Mitigations',  icon:'rowing', class: '' },
-    { id: 'observations', path: '/observations', title: 'Observations & Improvements ',  icon:'search', class: '' }
+    { id: 'observations', path: '/observations', title: 'Observations & Suggestions ',  icon:'search', class: '' }
 ];
 
 @Component({

@@ -4,24 +4,21 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Applications</h4>
-                        <!-- <p class="card-category"> Sub-title</p> -->
+                        <h4 class="card-title ">Applications <button mat-button *ngIf="userService.isAdmin$ | async" (click)="openDialog()" class="pull-right">Add <i class="material-icons">add</i> </button></h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead class="text-danger text-center">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th *ngFor="let header of applications.headers">{{ header }}</th>
+                                    <th *ngFor="let header of headers">{{ header }}</th>
+                                    <th *ngIf="userService.isAdmin$ | async"> Actions </th>
                                 </thead>
-                                <tbody class="text-center" *ngFor="let application of applications.data; let i = index;">
+                                <tbody class="text-center" *ngFor="let application of applications; let i = index;">
                                       <tr>
                                               <td>
                                                   {{ i + 1 }}
                                               </td>
-                                              <td class="text-left">
+                                              <td class="text-center">
                                                   {{ application.name }}
                                               </td>
                                               <td>
@@ -31,10 +28,14 @@
                                                   {{ application.documentation + '%' }}
                                               </td>
                                               <td>
-                                                  {{ application.support + '%' }}
+                                                  {{ application.shadowSupport + '%' }}
                                               </td>
                                               <td>
-                                                 {{ application.reverse_kt + '%' }}
+                                                 {{ application.reverseKT + '%' }}
+                                              </td>
+                                              <td class="td-actions" *ngIf="userService.isAdmin$ | async">
+                                                <button type="button" class="btn btn-success btn-link" (click)="openEditDialog(application)"><span class="mat-button-wrapper"><i class="material-icons">edit</i></span><div class="mat-button-ripple mat-ripple"></div><div class="mat-button-focus-overlay"></div></button>
+                                                <button type="button" class="btn btn-danger btn-link" (click)="delete(application.id)"><span class="mat-button-wrapper"><i class="material-icons">close</i></span><div class="mat-button-ripple mat-ripple"></div><div class="mat-button-focus-overlay"></div></button>
                                               </td>
                                         </tr>
                                 </tbody>
@@ -49,14 +50,14 @@
                                   </tr>
                                 </tfoot> -->
                             </table><br>
-                            <!-- <div class="row">
+                            <div class="row">
                                   <div class="col-md-12">
-                                      <i class="fa fa-circle text-info"></i> Basic Session (25%) 
-                                      <i class="fa fa-circle text-warning pl-3"></i> One Session (50%) 
-                                      <i class="fa fa-circle text-danger pl-3"></i> No More Sessions (75%) 
-                                      <i class="fa fa-circle text-success pl-3"></i> All Reviewed (100%) 
+                                      <i class="fa fa-circle text-pink pl-3 pr-2"></i> KT Sessions - TMO/Wiki/PK-Internal <br>
+                                      <i class="fa fa-circle text-pink pl-3 pr-2"></i> Documentation - PK application documentation <br>
+                                      <i class="fa fa-circle text-pink pl-3 pr-2"></i> Shadow Session - PK shadow session with HCL <br>
+                                      <i class="fa fa-circle text-pink pl-3 pr-2"></i> Primary Support - PK primary on operations, HCL on standby, TMO to monitor
                                   </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>

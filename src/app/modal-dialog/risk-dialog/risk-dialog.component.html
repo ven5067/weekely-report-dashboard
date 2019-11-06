@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>{{ data?.action === 'Edit'? 'Edit Risk' : 'Add Risk'}}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form">
+      <label>Area</label>
+      <input formControlName="area" class="form-control">
+    
+      <label>Risk Details</label>
+      <input formControlName="riskDetails" class="form-control">
+    
+      <label>Impact (1-5)</label>
+      <input formControlName="impact" class="form-control">
+    
+      <label>Mitigation Plan</label>
+      <input formControlName="migrationPlan" class="form-control">
+
+      <br>
+      <button (click)="closeDialog()" type="button" class="btn btn-danger">Close</button>
+      <button (click)="onSubmit()" type="button" class="btn">Save</button>
+    </form>
+</mat-dialog-content>

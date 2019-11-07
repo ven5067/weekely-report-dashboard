@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>{{ data?.action === 'Edit'? 'Edit Observation' : 'Add Observation'}}</h2>
 <mat-dialog-content class="mat-typography">
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div>
           <span class="fieldLabel">Name
             <span class="right-align pull-right">
@@ -26,6 +26,6 @@
       
         <br>
         <button (click)="closeDialog()" type="button" class="btn btn-danger">Close</button>
-        <button (click)="onSubmit()" type="button" class="btn">Save</button>
+        <button type="submit" class="btn">Save</button>
       </form>      
 </mat-dialog-content>

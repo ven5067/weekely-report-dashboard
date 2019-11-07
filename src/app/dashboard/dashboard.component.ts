@@ -8,7 +8,7 @@ import { DashboardService } from 'app/services/dashboard.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
+export class DashboardComponent implements OnInit {
   public charts: Array<{
     title: string;
     type: string;
@@ -18,6 +18,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     options?: {};
     body?: {}
   }> = [];
+
+  public chartWidth: number = 600;
 
   public charts$;
 
@@ -33,8 +35,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ) {
     this.charts$ = this.dashboardService.charts$;
   }
-
-  ngAfterViewInit() {}
 
   public onReady() {
     console.log('Chart ready');
@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   public ngOnInit() {
-    
+    this.chartWidth = navigator.platform.includes('Win') ? 470 : 630;
   }
 
   public navigateToTest() {

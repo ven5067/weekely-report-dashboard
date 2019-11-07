@@ -1,11 +1,11 @@
 <h2 mat-dialog-title>{{ data?.action === 'Edit'? 'Edit Focus' : 'Add Focus'}}</h2>
 <mat-dialog-content class="mat-typography">
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <label>Focus</label>
         <input formControlName="focus" class="form-control">
       
         <br>
         <button (click)="closeDialog()" type="button" class="btn btn-danger">Close</button>
-        <button (click)="onSubmit()" type="button" class="btn">Save</button>
+        <button type="submit" class="btn">Save</button>
     </form>
 </mat-dialog-content>
